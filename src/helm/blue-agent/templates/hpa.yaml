@@ -29,7 +29,7 @@ spec:
   jobTargetRef:
     activeDeadlineSeconds: {{ .Values.pipelines.timeout | int | required "A value for .Values.pipelines.timeout is required" }}
     backoffLimit: 0 # Do not retry
-    parallelism: 1 # Only one pod at a time
+    parallelism:  {{ .Values.pipelines.parallelism | int | required "A value for .Values.pipelines.parallelism is required" }}
     ttlSecondsAfterFinished: {{ .Values.pipelines.cleanup.ttl | int | required "A value for .Values.pipelines.cleanup.ttl is required" }}
     template:
       metadata:

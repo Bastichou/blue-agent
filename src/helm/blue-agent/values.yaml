@@ -42,6 +42,8 @@ pipelines:
   poolName: null
   # Timeout in seconds, default is 1 hour
   timeout: 3600
+  # Number of pod to run in parallel
+  parallelism: 1
   # Cleanup policy for jobs
   cleanup:
     # Number of failed jobs to retain
